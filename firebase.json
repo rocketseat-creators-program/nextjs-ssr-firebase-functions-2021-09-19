@@ -5,6 +5,24 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "/api/**",
+        "function": "nextServer"
+      },
+      {
+        "source": "/blog/**",
+        "function": "nextServer"
+      },
+      {
+        "source": "**",
+        "function": "out/index.html"
+      }
     ]
+  },
+  "functions": {
+    "source": ".",
+    "runtime": "nodejs10"
   }
 }
